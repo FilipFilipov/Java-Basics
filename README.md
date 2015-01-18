@@ -1,2 +1,2 @@
-# Java-Basics-Homeworks
-Solutions to homework problems from http://softuni.bg.
+# Java-Basics
+For more programming courses visit http://softuni.bg.
