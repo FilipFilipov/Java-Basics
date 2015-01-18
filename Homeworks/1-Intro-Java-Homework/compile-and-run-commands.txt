@@ -1,0 +1,4 @@
+javac src/_6_SumTwoNumbers.java
+cd src
+java _6_SumTwoNumbers
+
