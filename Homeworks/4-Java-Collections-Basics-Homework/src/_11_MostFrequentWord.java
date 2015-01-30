@@ -7,6 +7,7 @@ public class _11_MostFrequentWord {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter some text:");
 		String[] words = input.nextLine().toLowerCase().split("\\W+");
+		
 		int maxCount = 0;
 		TreeMap<String, Integer> wordCounters = new TreeMap<>();
 		for (String word : words) {
@@ -14,6 +15,7 @@ public class _11_MostFrequentWord {
 			wordCounters.put(word, ++count);
 			maxCount = Math.max(count, maxCount);
 		}
+		
 		System.out.println("Most frequent word(s) in your text:");
 		for (Map.Entry<String, Integer> wordCounter : wordCounters.entrySet()) {
 			if (wordCounter.getValue() == maxCount) {

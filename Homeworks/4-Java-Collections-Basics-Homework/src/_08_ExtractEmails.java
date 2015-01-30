@@ -7,9 +7,11 @@ public class _08_ExtractEmails {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter some text:");
 		String text = input.nextLine();
+		
 		Pattern email = Pattern.compile("([a-zA-Z0-9]+[._-]?[a-zA-Z0-9]+)+"
 				+ "@([A-Za-z]+-?[A-Za-z]+)+(\\.[A-Za-z]+-?[A-Za-z]+)+");
 		Matcher matcher = email.matcher(text);
+		
 		System.out.println("Email address(es) in your text:");
 		while (matcher.find()) {
 			System.out.println(matcher.group());
