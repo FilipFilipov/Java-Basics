@@ -53,7 +53,7 @@ public class _10_PaintAHouseAsSVG {
 	}
 
 	public static void paintHouse() {
-//		Because we draw in the imput's coordinate system (x10, so it's all integers),
+//		Because we draw in the input's coordinate system (x10, so it's all integers),
 //		the final picture will be too small and far to the right and a bit low.
 //		These transformations correct that by offsetting and then multiplying
 //		the coordinates in all the subsequent commands.
@@ -106,8 +106,9 @@ public class _10_PaintAHouseAsSVG {
 //			if they are integers.
 			svg2d.setStroke(drawingStroke);
 			svg2d.setColor(Color.BLACK);			
-			String hLabel = (x / 10f == x / 10) ? ("" + x / 10) : ("" + x / 10f);
-			String vLabel = (y / 10f == y / 10) ? ("" + y / 10) : ("" + y / 10f);
+			String hLabel = (x % 10 == 0) ? ("" + x / 10) : ("" + x / 10f);
+			String vLabel = (y % 10 == 0) ? ("" + y / 10) : ("" + y / 10f);
+			
 //			Adjust the drawing coordinates, since the
 //			painting method will take the input as the upper left point
 //			of the drawn object and we want center- or right-aligned text.
@@ -160,15 +161,18 @@ public class _10_PaintAHouseAsSVG {
 
 	private static void paintDot(double x, double y, boolean inside) {
 		int diameter = 3;
+		
 //		Define the dot, displacing it up and to the left by half its size,
 //		so the center point will match the input coordinates when drawn.
 		Ellipse2D dot = new Ellipse2D.Double(x * 10 - diameter / 2f, y * 10 - diameter / 2f, diameter, diameter);
+		
 //		Outline the dot with a thin black line, even if it will be a
 //		black circle, so that the gray and black point are the same
 //		size in the end.
 		svg2d.setStroke(new BasicStroke(0.3f, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
 		svg2d.setColor(Color.BLACK);
 		svg2d.draw(dot);
+		
 //		Fill the outline with a black or gray color, depending on the earlier calculations.
 		if (!inside) {
 			svg2d.setColor(new Color(0xbfbfbf));			
