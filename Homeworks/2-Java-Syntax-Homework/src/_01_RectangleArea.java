@@ -6,6 +6,6 @@ public class _01_RectangleArea {
 		System.out.println("Enter the sides of the rectangle:");
 		int a = input.nextInt();
 		int b = input.nextInt();
-		System.out.println("Area = " + (a * b));
+		System.out.println("Area = " + (a * b) + " cm\u00B2.");
 	}
 }
