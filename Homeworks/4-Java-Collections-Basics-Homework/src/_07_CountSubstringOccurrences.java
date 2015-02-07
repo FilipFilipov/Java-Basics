@@ -10,9 +10,9 @@ public class _07_CountSubstringOccurrences {
 		
 		int count = 0;
 		int index = 0;
-		while (text.indexOf(target, index) != -1) {
+		while ((index = text.indexOf(target, index)) != -1) {
 			count++;
-			index = text.indexOf(target, index) + 1;
+			index++;
 		}
 		
 		System.out.println("Target substring appears " + count + " time(s).");

@@ -48,7 +48,7 @@ public class _04_FullHouseWithJokers {
 //		of them, meaning 5 objects with 2 states, or 2 to the power of 5 combinations.
 		for (int combination = 0; combination < Math.pow(2, 5); combination++) {
 			String[] fullHouseCopy = Arrays.copyOf(fullHouse, fullHouse.length);
-//			To generate all the possible hands, we take first 5 bit values
+//			To generate all the possible hands, we take the first 5 bit values
 //			from the combination number. The range is from 00000(0) to
 //			11111(32 or 2 to the power of 5). We then swap the cards in
 //			the positions that match the '1' bits with a joker ('*').

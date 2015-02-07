@@ -17,8 +17,8 @@ public class BitCarousel {
                 number |= rightMostBit << 5;
             } else if (direction.equals("left")) {
                 int leftMostBit = (number >> 5) & 1;
+                number &= ~(1 << 5);
                 number <<= 1;
-                number &= ~(1 << 6);
                 number |= leftMostBit;
             }
         }

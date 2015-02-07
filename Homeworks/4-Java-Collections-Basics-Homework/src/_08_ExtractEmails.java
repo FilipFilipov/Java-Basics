@@ -8,8 +8,8 @@ public class _08_ExtractEmails {
 		System.out.println("Enter some text:");
 		String text = input.nextLine();
 		
-		Pattern email = Pattern.compile("([a-zA-Z0-9]+[._-]?[a-zA-Z0-9]+)+"
-				+ "@([A-Za-z]+-?[A-Za-z]+)+(\\.[A-Za-z]+-?[A-Za-z]+)+");
+		Pattern email = Pattern.compile("\\b[A-Z0-9._-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b",
+			    Pattern.CASE_INSENSITIVE);
 		Matcher matcher = email.matcher(text);
 		
 		System.out.println("Email address(es) in your text:");

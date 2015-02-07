@@ -1,4 +1,3 @@
-import java.util.Map;
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -17,10 +16,9 @@ public class _11_MostFrequentWord {
 		}
 		
 		System.out.println("Most frequent word(s) in your text:");
-		for (Map.Entry<String, Integer> wordCounter : wordCounters.entrySet()) {
-			if (wordCounter.getValue() == maxCount) {
-				System.out.println(wordCounter.getKey() + " -> " +
-			wordCounter.getValue() + " time(s)");
+		for (String word : wordCounters.keySet()) {
+			if (wordCounters.get(word) == maxCount) {
+				System.out.println(word + " -> " + maxCount + " time(s)");
 			}
 		}		
 	}
